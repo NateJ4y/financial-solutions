@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/:page(about|services|apply|contact|faq|checklist|privacy|terms).html", "destination": "/:page/", "permanent": true }
+  ]
+}
