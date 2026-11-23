@@ -6,8 +6,20 @@ export default function HomePage() {
   return (
     <>
       <section className="launch-hero" aria-labelledby="hero-title">
-        <div className="launch-glow launch-glow-one" aria-hidden="true" />
-        <div className="launch-glow launch-glow-two" aria-hidden="true" />
+        <div className="launch-background" aria-hidden="true">
+          <img
+            className="launch-background-image"
+            src="/assets/hero.jpg"
+            alt=""
+            width="1920"
+            height="1080"
+            fetchPriority="high"
+            decoding="async"
+          />
+          <div className="launch-background-shade" />
+          <div className="launch-background-label">THE ROAD AHEAD <span>01 — 03</span></div>
+        </div>
+
         <div className="wrap launch-grid">
           <div className="launch-copy">
             <p className="eyebrow launch-eyebrow">
@@ -24,10 +36,7 @@ export default function HomePage() {
               the finance journey feel clear, personal and considered.
             </p>
             <div className="actions launch-actions">
-              <a
-                className="button"
-                href={whatsapp()}
-              >
+              <a className="button" href={whatsapp()}>
                 Let’s talk finance <span aria-hidden="true">↗</span>
               </a>
               <a className="button outline" href="/services/">
@@ -42,39 +51,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          <div className="launch-visual">
-            <div className="launch-image-frame">
-              <img
-                className="launch-image"
-                src="/assets/hero.jpg"
-                alt="Premium vehicle ready for the road"
-                width="1920"
-                height="1080"
-                fetchPriority="high"
-                decoding="async"
-              />
-              <div className="launch-image-shade" />
-              <div className="launch-image-label">
-                <span>THE ROAD AHEAD</span>
-                <span>01 — 03</span>
-              </div>
-            </div>
-            <div className="launch-float-card">
-              <span className="launch-card-icon" aria-hidden="true">↗</span>
-              <div>
-                <span>YOUR JOURNEY, YOUR WAY</span>
-                <strong>Move forward<br />with confidence.</strong>
-              </div>
-            </div>
-            <div className="launch-orbit launch-orbit-one" aria-hidden="true" />
-            <div className="launch-orbit launch-orbit-two" aria-hidden="true" />
-          </div>
         </div>
-        <a className="launch-scroll" href="#welcome">
-          <span className="launch-scroll-line" />
-          SCROLL TO DISCOVER
-        </a>
       </section>
 
       <div className="trust-strip">
