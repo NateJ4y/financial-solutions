@@ -1,27 +1,114 @@
-/* Mobile Launch hero: keep the message and vehicle visual inside one unified hero. */
+/* Full-bleed Launch hero: one immersive, viewport-height homepage section. */
+.launch-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: max(680px, calc(100svh - 122px));
+  padding: clamp(3.5rem, 7vh, 6rem) 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.launch-grid {
+  display: block;
+  width: min(calc(100% - 3rem), 1280px);
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.launch-copy {
+  width: min(100%, 720px);
+  padding: clamp(1rem, 3vh, 2rem) 0;
+}
+
+.launch-copy h1 {
+  max-width: 10ch;
+  text-wrap: balance;
+}
+
+.launch-lead {
+  max-width: 34rem;
+}
+
+.launch-visual {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  animation: none;
+  pointer-events: none;
+}
+
+.launch-image-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  background: #071522;
+}
+
+.launch-image {
+  object-position: center 55%;
+  animation: none;
+  transform: none;
+}
+
+.launch-image-shade {
+  background:
+    linear-gradient(90deg, rgba(4, 15, 25, .94) 0%, rgba(4, 15, 25, .78) 42%, rgba(4, 15, 25, .30) 100%),
+    linear-gradient(0deg, rgba(4, 15, 25, .76) 0%, transparent 62%);
+}
+
+.launch-image-label {
+  left: auto;
+  right: clamp(1.5rem, 4vw, 4rem);
+  top: clamp(1.5rem, 4vh, 3rem);
+  bottom: auto;
+  opacity: .8;
+}
+
+.launch-float-card,
+.launch-orbit,
+.launch-glow,
+.launch-scroll {
+  display: none;
+}
+
+.launch-proof {
+  margin-top: clamp(2rem, 4vh, 3.5rem);
+  border-top-color: rgba(255, 255, 255, .32);
+}
+
 @media (max-width: 780px) {
   .launch-hero {
-    min-height: min(820px, calc(100svh - 103px));
-    padding: 3.2rem 0 3.6rem;
+    min-height: max(680px, calc(100svh - 103px));
+    padding: 3.5rem 0;
     align-items: center;
-    isolation: isolate;
   }
 
   .launch-grid {
-    display: block;
     width: calc(100% - 2.5rem);
-    position: relative;
-    z-index: 2;
   }
 
   .launch-copy {
-    max-width: 42rem;
+    width: 100%;
+    max-width: 620px;
     padding: 0;
   }
 
   .launch-copy h1 {
     max-width: 10ch;
-    font-size: clamp(3.4rem, 10.8vw, 5.4rem);
+    font-size: clamp(3.35rem, 10.8vw, 5.5rem);
   }
 
   .launch-lead {
@@ -30,71 +117,25 @@
     text-shadow: 0 1px 12px rgba(0, 0, 0, .24);
   }
 
-  .launch-visual {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    animation: none;
-    pointer-events: none;
-  }
-
-  .launch-image-frame {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    border-radius: 0;
-    background: #071522;
-    box-shadow: none;
-  }
-
   .launch-image {
     object-position: 62% center;
-    animation: none;
-    transform: none;
   }
 
   .launch-image-shade {
     background:
-      linear-gradient(90deg, rgba(4, 15, 25, .94) 0%, rgba(4, 15, 25, .78) 58%, rgba(4, 15, 25, .35) 100%),
-      linear-gradient(0deg, rgba(4, 15, 25, .82) 0%, transparent 72%);
-  }
-
-  .launch-image-label {
-    left: auto;
-    right: 1.25rem;
-    top: 1.25rem;
-    bottom: auto;
-    font-size: .5rem;
-    opacity: .78;
-  }
-
-  .launch-float-card {
-    display: none;
-  }
-
-  .launch-orbit,
-  .launch-glow {
-    display: none;
+      linear-gradient(90deg, rgba(4, 15, 25, .95) 0%, rgba(4, 15, 25, .82) 58%, rgba(4, 15, 25, .38) 100%),
+      linear-gradient(0deg, rgba(4, 15, 25, .84) 0%, transparent 72%);
   }
 
   .launch-proof {
-    margin-top: 2.2rem;
-    border-top-color: rgba(255, 255, 255, .32);
-  }
-
-  .launch-scroll {
-    display: none;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 420px) {
   .launch-hero {
-    min-height: min(790px, calc(100svh - 103px));
-    padding: 2.8rem 0 3rem;
+    min-height: max(680px, calc(100svh - 103px));
+    padding: 2.8rem 0;
   }
 
   .launch-grid {
@@ -102,7 +143,7 @@
   }
 
   .launch-copy h1 {
-    font-size: clamp(3.15rem, 11vw, 3.8rem);
+    font-size: clamp(3.1rem, 10.8vw, 3.8rem);
   }
 
   .launch-actions {
@@ -112,13 +153,11 @@
   .launch-actions .button {
     width: 100%;
   }
-
-  .launch-proof {
-    margin-top: 1.8rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .launch-copy,
+  .launch-visual,
   .launch-image {
     animation: none !important;
     transform: none !important;
