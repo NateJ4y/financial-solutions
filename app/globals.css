@@ -1674,7 +1674,7 @@ img {
 }
 .launch-orbit {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   border: 1px solid rgba(225,194,143,.22);
   border-radius: 50%;
   pointer-events: none;
