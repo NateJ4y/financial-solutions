@@ -1,5 +1,6 @@
 import { ContactBand, Journey, ServiceCards } from './components/sections'
 import { VehicleExplorer } from './components/finance-controls'
+import { whatsapp } from './content'
 
 export default function HomePage() {
   return (
@@ -25,7 +26,7 @@ export default function HomePage() {
             <div className="actions launch-actions">
               <a
                 className="button"
-                href="https://wa.me/27833032807?text=Hi%20Call%20Me%20Finance%20Solutions%2C%20I%E2%80%99d%20like%20to%20discuss%20vehicle%20finance."
+                href={whatsapp()}
               >
                 Let’s talk finance <span aria-hidden="true">↗</span>
               </a>
@@ -78,9 +79,9 @@ export default function HomePage() {
 
       <div className="trust-strip">
         <div className="wrap">
-          <span>VEHICLE FINANCE</span><i />
-          <span>PRIVATE-TO-PRIVATE</span><i />
-          <span>REFINANCING</span><i />
+          <span>VEHICLE FINANCE</span><i aria-hidden="true" />
+          <span>PRIVATE-TO-PRIVATE</span><i aria-hidden="true" />
+          <span>REFINANCING</span><i aria-hidden="true" />
           <span>PERSONAL GUIDANCE</span>
         </div>
       </div>
