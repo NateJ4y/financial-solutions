@@ -4,6 +4,7 @@ import { SiteHeader } from './components/site-header'
 import { SiteFooter } from './components/sections'
 import { company } from './content'
 import './globals.css'
+import './launch-hero-mobile.css'
 
 export const metadata: Metadata = {
   title: {
