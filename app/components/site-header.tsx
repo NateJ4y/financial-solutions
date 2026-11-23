@@ -12,17 +12,13 @@ export function SiteHeader() {
 
   return (
     <>
-      <a className="skip" href="#main">
-        Skip to content
-      </a>
+      <a className="skip" href="#main">Skip to content</a>
       <div className="topline">
         <div className="wrap topline-inner">
           <span>Personal vehicle finance guidance</span>
           <div>
             <a href={`tel:+${primary.dial}`}>{primary.number}</a>
-            <span className="topline-divider" aria-hidden="true">
-              /
-            </span>
+            <span className="topline-divider" aria-hidden="true">/</span>
             <a href={`tel:+${secondary.dial}`}>{secondary.number}</a>
           </div>
         </div>
@@ -37,7 +33,8 @@ export function SiteHeader() {
         }}
       >
         <div className="wrap header-inner">
-          <a className="brand" href="/">
+          <a className="brand" href="/" aria-label="Call Me Finance Solutions home">
+            <span className="brand-monogram" aria-hidden="true">CM</span>
             <span className="brand-name">
               Call Me<small>Finance Solutions</small>
             </span>
@@ -51,8 +48,7 @@ export function SiteHeader() {
             aria-label={open ? 'Close navigation' : 'Open navigation'}
             onClick={() => setOpen((previous) => !previous)}
           >
-            <span />
-            <span />
+            <span /><span />
           </button>
           <nav
             id="site-nav"
@@ -64,6 +60,7 @@ export function SiteHeader() {
               <a
                 key={href}
                 href={href}
+                onClick={() => setOpen(false)}
                 aria-current={
                   currentPath === href.replace(/\/$/, '') ? 'page' : undefined
                 }
@@ -71,8 +68,8 @@ export function SiteHeader() {
                 {label}
               </a>
             ))}
-            <a className="button" href="/apply/">
-              Start a conversation
+            <a className="button" href="/apply/" onClick={() => setOpen(false)}>
+              Start a conversation <span aria-hidden="true">↗</span>
             </a>
           </nav>
         </div>
