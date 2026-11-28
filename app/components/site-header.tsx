@@ -29,7 +29,7 @@ export function SiteHeader() {
         <div className="wrap topline-inner">
           <span>PERSONAL VEHICLE FINANCE GUIDANCE · SOUTH AFRICA</span>
           <div className="topline-contacts">
-            <a href={`tel:+${primary.dial}}>{primary.number}</a>
+            <a href={'tel:+' + primary.dial}>{primary.number}</a>
             <span className="topline-divider" aria-hidden="true">/</span>
             <a href={`tel:+${secondary.dial}`}>{secondary.number}</a>
           </div>
