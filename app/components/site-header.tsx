@@ -44,7 +44,7 @@ export function SiteHeader() {
       >
         <div className="wrap header-inner">
           <a className="brand" href="/" aria-label="Call Me Finance Solutions home">
-            <img className="brand-logo" src="/assets/call-me-logo.svg" alt="Call Me Finance Solutions 4 You" width="520" height="390" />
+            <img className="brand-logo" src="/assets/call-me-logo.png" alt="Call Me Finance Solutions 4 You" width="300" height="225" />
           </a>
           <button
             ref={menu}
