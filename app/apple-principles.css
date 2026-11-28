@@ -1,0 +1,323 @@
+/* Apple-inspired experience principles for Call Me Finance.
+   Principles applied: clarity, hierarchy, consistency, responsive layouts,
+   generous hit areas, visible feedback, accessibility and restrained motion.
+   This is not an Apple visual clone; the flyer remains the brand source of truth. */
+
+:root {
+  --cm-radius-sm: 12px;
+  --cm-radius-md: 20px;
+  --cm-radius-lg: 30px;
+  --cm-content: 1240px;
+  --cm-shadow-soft: 0 16px 44px rgba(8, 24, 39, .07);
+  --cm-shadow-hover: 0 22px 56px rgba(8, 24, 39, .12);
+  --cm-focus: #a8792d;
+  --cm-motion: cubic-bezier(.2,.75,.25,1);
+}
+
+html { scroll-padding-top: 110px; }
+body { text-rendering: optimizeLegibility; }
+.wrap { width: min(var(--cm-content), calc(100% - clamp(36px, 8vw, 128px))); }
+p { text-wrap: pretty; }
+h1,h2,h3 { text-wrap: balance; }
+:target { scroll-margin-top: 112px; }
+
+/* Navigation: quiet, consistent, immediately understandable. */
+.site-header {
+  background: rgba(250,247,240,.94);
+  color: #111b2c;
+  border-bottom: 1px solid rgba(17,27,44,.08);
+  box-shadow: 0 4px 24px rgba(8,24,39,.035);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+.site-header.is-scrolled {
+  background: rgba(250,247,240,.98);
+  box-shadow: 0 10px 34px rgba(8,24,39,.09);
+}
+.header-inner { min-height: 82px; }
+.nav > a:not(.button) { color: #29384a; }
+.nav > a[aria-current='page'] { color: #815d28; }
+.nav > a:not(.button)::after { background: var(--accent-gold); }
+.menu {
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(17,27,44,.2);
+  background: rgba(17,27,44,.035);
+}
+.menu span { background: #15243a; }
+.menu[aria-expanded='true'] span { background: #15243a; }
+.nav .button { min-height: 46px; }
+.skip {
+  border-radius: 999px; box-shadow: var(--cm-shadow-soft);
+}
+
+/* One clear primary action style across every page. */
+.button {
+  min-height: 50px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  letter-spacing: .015em;
+  text-transform: none;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(8,24,39,.08);
+}
+.button:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(8,24,39,.14); }
+.button:active { transform: translateY(0) scale(.985); }
+.button.outline {
+  border-width: 1px;
+  box-shadow: none;
+}
+.text-link,.finance-card-cta,.finance-inline-link,.finance-text-link {
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+.actions { gap: 12px; }
+
+/* Page introductions: strong hierarchy, fewer competing decorations. */
+.inner-hero {
+  padding: clamp(76px, 10vw, 142px) 0;
+  background:
+    radial-gradient(ellipse at 92% 100%, rgba(184,138,62,.13), transparent 38%),
+    linear-gradient(118deg,#0a1929 0%,#172c43 100%);
+}
+.inner-hero:after { opacity: .55; }
+.inner-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3.4rem, 7vw, 6.8rem);
+  line-height: .98;
+}
+.inner-hero .lead { max-width: 55ch; font-size: clamp(15px,1.25vw,18px); }
+.finance-hero { padding-block: clamp(76px, 10vw, 138px); }
+.finance-hero h1 { line-height: .98; }
+.finance-hero:after { opacity: .55; }
+
+/* Layout rhythm: use whitespace and alignment instead of extra borders. */
+.section { padding-block: clamp(76px, 9vw, 132px); }
+.section-heading { margin-bottom: clamp(28px,4vw,48px); }
+.section-heading h2,.finance-section-intro h2 { max-width: 14ch; }
+.section-note { max-width: 44ch; }
+.welcome-grid,.affordability-grid,.about-grid,.contact-grid,.faq-layout {
+  gap: clamp(36px, 7vw, 100px);
+}
+.welcome-copy > p:not(.eyebrow),.affordability-copy > p:not(.eyebrow),
+.about-copy > p:not(.eyebrow) {
+  max-width: 58ch;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Cards: related content grouped into calm, consistent surfaces. */
+.service-grid,.finance-solution-grid {
+  gap: 14px;
+  border: 0;
+  background: transparent;
+}
+.service-card,.finance-solution-card,.contact-card {
+  border: 1px solid rgba(17,27,44,.09);
+  border-radius: var(--cm-radius-md);
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(8,24,39,.035);
+  transition: transform .28s var(--cm-motion), box-shadow .28s var(--cm-motion), border-color .28s ease, background .28s ease;
+}
+.service-card { min-height: 320px; padding: clamp(22px,2.5vw,34px); }
+.service-card:hover,.finance-solution-card:hover,.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cm-shadow-hover);
+  border-color: rgba(184,138,62,.35);
+}
+.service-card:hover { background: #fffefa; }
+.finance-solution-card {
+  min-height: 340px;
+  padding: clamp(24px,2.8vw,36px);
+  background: #fffefa;
+}
+.finance-solution-card h3 { line-height: 1.06; }
+.finance-solution-fit { letter-spacing: .1em; }
+.finance-card-cta { min-height: 46px; }
+.contact-card { padding: clamp(24px,3vw,38px); }
+.contact-card h3 { margin-top: 1.2rem; }
+
+/* Vehicle picker: familiar segmented selection with explicit selected state. */
+.vehicle-tabs {
+  gap: 8px;
+  border: 0;
+  overflow: visible;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.vehicle-tabs button {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid rgba(246,243,236,.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+}
+.vehicle-tabs button:hover { background: rgba(255,255,255,.1); }
+.vehicle-tabs button[aria-selected='true'] {
+  border-color: var(--accent-gold);
+  background: var(--accent-gold);
+  color: #111b2c;
+}
+.vehicle-feature {
+  overflow: hidden;
+  border: 1px solid rgba(246,243,236,.12);
+  border-radius: var(--cm-radius-lg);
+}
+.vehicle-image-wrap img { transition: transform .8s var(--cm-motion); }
+.vehicle-copy { padding: clamp(28px,5vw,68px); }
+
+/* Steps and information lists: readable progression, not dashboard-like boxes. */
+.journey-grid { gap: 18px; border: 0; }
+.journey-step {
+  min-height: 0;
+  padding: 26px;
+  border: 1px solid rgba(17,27,44,.1);
+  border-radius: var(--cm-radius-md);
+  background: rgba(255,253,248,.58);
+}
+.journey-step:not(:first-child) { padding-left: 26px; }
+.journey-step:not(:last-child) { border-right: 1px solid rgba(17,27,44,.1); }
+.journey-index {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #eadfc9;
+  border: 0;
+}
+.finance-step-grid { gap: 14px; border: 0; }
+.finance-step-grid li,.finance-step-grid li+li {
+  padding: 24px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--cm-radius-md);
+  background: rgba(255,253,248,.55);
+}
+.finance-step-grid li+li { border-left: 1px solid var(--border-light); }
+
+/* Forms: clear labels, generous controls, obvious keyboard focus. */
+.form,.checklist {
+  border: 1px solid rgba(17,27,44,.09);
+  border-radius: var(--cm-radius-lg);
+  box-shadow: var(--cm-shadow-soft);
+}
+.form { padding: clamp(24px,4vw,44px); gap: 18px; }
+.form label { gap: 8px; font-size: 13px; color: #263548; }
+.form select,.form input,.form textarea {
+  min-height: 52px;
+  padding: 13px 15px;
+  border: 1px solid #c9c4b9;
+  border-radius: 12px;
+  background: #fffefa;
+  color: #111b2c;
+  font: 500 14px/1.5 var(--sans);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.form select:focus,.form input:focus,.form textarea:focus {
+  border-color: #a8792d;
+  box-shadow: 0 0 0 4px rgba(184,138,62,.15);
+  outline: none;
+}
+.form .button { justify-self: stretch; min-height: 52px; }
+.checklist { padding: clamp(22px,3vw,36px); }
+.check-row {
+  min-height: 56px;
+  gap: 14px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+.check-row input { width: 20px; height: 20px; }
+.progress-row progress { height: 8px; border-radius: 999px; overflow: hidden; }
+.help { border-radius: var(--cm-radius-md); padding: clamp(22px,3vw,34px); }
+
+/* FAQ: native disclosure remains accessible and gains clearer interaction feedback. */
+.faq details { padding: 0; }
+.faq summary {
+  min-height: 68px;
+  padding: 14px 0;
+  grid-template-columns: 1fr 28px;
+  gap: 14px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.faq summary > b {
+  display: grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: rgba(184,138,62,.12);
+}
+.faq details[open] summary { color: #815d28; }
+.faq details p { max-width: 65ch; margin: 0 44px 20px 0; font-size: 14px; }
+
+/* Imagery should feel intentional and retain its natural proportions. */
+.welcome-visual img,.affordability-visual img,.about-image img,.contact-intro img {
+  border-radius: var(--cm-radius-lg);
+}
+.image-caption,.visual-note {
+  border-radius: 0 16px 0 0;
+  box-shadow: var(--cm-shadow-soft);
+}
+
+/* Footer and closing CTA: same family of radii and spacing. */
+.closing-cta { border-radius: var(--cm-radius-lg) var(--cm-radius-lg) 0 0; }
+.footer { padding-top: clamp(48px,6vw,76px); }
+.footer nav a { min-height: 36px; display: inline-flex; align-items: center; }
+.footer a { text-underline-offset: 4px; }
+
+/* All controls should be easy to tap; preserve visible keyboard navigation. */
+a,button,summary,input,select { -webkit-tap-highlight-color: transparent; }
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible {
+  outline: 3px solid var(--cm-focus);
+  outline-offset: 4px;
+}
+button:disabled,.button[aria-disabled='true'] { opacity: .55; cursor: not-allowed; }
+@media (hover: hover) {
+  .nav > a:not(.button):hover { color: #815d28; }
+}
+@media (max-width: 900px) {
+  .service-grid,.finance-solution-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .journey-grid,.finance-step-grid { grid-template-columns: 1fr; }
+  .journey-step:not(:last-child) { border-right: 1px solid rgba(17,27,44,.1); }
+}
+@media (max-width: 780px) {
+  .header-inner { min-height: 72px; }
+  .site-header .nav {
+    background: rgba(250,247,240,.99);
+    border-top: 1px solid rgba(17,27,44,.08);
+    box-shadow: 0 22px 40px rgba(8,24,39,.14);
+  }
+  .site-header .nav > a:not(.button) { color: #243449; border-color: rgba(17,27,44,.09); }
+  .site-header .nav > a[aria-current='page'] { color: #815d28; }
+  .site-header .nav .button { color: #111b2c; }
+  .nav-scrim { background: rgba(8,24,39,.34); }
+  .service-grid,.finance-solution-grid { grid-template-columns: 1fr; }
+  .service-card,.finance-solution-card { min-height: 0; }
+  .service-card-body { padding-top: 28px; }
+  .vehicle-tabs { flex-wrap: nowrap; overflow-x: auto; margin-right: -20px; padding: 0 20px 10px 0; scrollbar-width: none; }
+  .vehicle-tabs::-webkit-scrollbar { display: none; }
+  .vehicle-tabs button { flex: 0 0 auto; }
+  .journey-step,.journey-step:not(:first-child) { padding: 22px; border: 1px solid rgba(17,27,44,.1); }
+  .finance-step-grid li,.finance-step-grid li+li { display: grid; grid-template-columns: 38px 1fr; gap: 0 12px; padding: 20px; }
+  .finance-step-grid li+li { border-left: 1px solid var(--border-light); }
+  .finance-step-grid li>span { grid-row: 1/3; }
+  .finance-step-grid h3 { margin-top: 0; }
+  .faq summary { min-height: 64px; font-size: 14px; }
+  .faq details p { margin-right: 0; font-size: 13px; }
+  .contact-card { padding: 24px; }
+  .closing-cta { border-radius: 24px 24px 0 0; }
+  .button { min-height: 50px; }
+}
+@media (max-width: 420px) {
+  .wrap { width: calc(100% - 36px); }
+  .inner-hero { padding-block: 68px; }
+  .inner-hero h1 { font-size: clamp(3rem, 13vw, 4.2rem); }
+  .section { padding-block: 64px; }
+  .form .button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
