@@ -376,3 +376,23 @@
   .launch-hero .launch-background-image { animation:none;transform:none; }
   .service-card,.button { transition:none; }
 }
+
+/* Centre the logo only in the collapsed mobile/tablet header. */
+@media (max-width:780px) {
+  .header-inner { position:relative; }
+  .header-inner > .brand {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:112px;
+    min-width:112px;
+    justify-content:center;
+  }
+  .header-inner > .brand .brand-logo {
+    width:100%;
+    max-height:68px;
+    object-fit:contain;
+  }
+  .header-inner > .menu { margin-left:auto; position:relative; z-index:1; }
+}
