@@ -14,7 +14,7 @@ export default function HomePage() {
         <div className="wrap launch-grid">
           <div className="launch-copy">
             <p className="eyebrow launch-eyebrow"><span className="eyebrow-line" /> SOUTH AFRICAN VEHICLE FINANCE</p>
-            <h1 id="hero-title"><span className="flyer-script">Your journey.</span>Our priority.</h1>
+            <h1 id="hero-title"><span className="hero-title-line">Your journey.</span>Our priority.</h1>
             <p className="launch-lead">
               Safe. Simple. Trusted. Helping you secure today, so you can enjoy tomorrow.
               Personal guidance for vehicle finance, private-to-private purchases and refinancing.
