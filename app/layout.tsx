@@ -5,6 +5,7 @@ import { SiteFooter } from './components/sections'
 import { company } from './content'
 import './globals.css'
 import './launch-hero-mobile.css'
+import './transformation.css'
 
 export const metadata: Metadata = {
   title: {
