@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+:root {
+  --ink: #101a2c;
+  --ink-2: #17243a;
+  --gold: #b88a3e;
+  --gold-light: #d8b779;
+  --ivory: #f5f0e6;
+  --paper: #fffdf8;
+}
+
+.topline { background:#091426; }
+.site-header {
+  background:rgba(248,245,238,.97);
+  color:var(--ink);
+  border-bottom:1px solid rgba(166,126,58,.32);
+  box-shadow:0 8px 26px rgba(15,25,40,.05);
+}
+.site-header.is-scrolled { background:rgba(248,245,238,.985); box-shadow:0 12px 30px rgba(15,25,40,.09); }
+.header-inner { min-height:102px; }
+.brand { width:154px; min-width:154px; display:flex; align-items:center; }
+.brand-logo { display:block; width:100%; height:auto; max-height:91px; object-fit:contain; }
+.nav > a:not(.button) { color:#273248; font-size:11px; letter-spacing:.055em; }
+.nav > a[aria-current='page'], .nav > a:not(.button):hover { color:#9a702f; }
+.nav .button { color:#101a2c; }
+.menu { border-color:rgba(16,26,44,.35); }
+.menu span { background:#101a2c; }
+.nav-scrim { background:rgba(5,12,22,.45); }
+.flyer-script {
+  display:block;
+  margin-bottom:-.08em;
+  color:#e2c58d;
+  font:400 clamp(2.4rem,5.2vw,4.5rem)/.95 'Allura',cursive;
+  letter-spacing:.015em;
+}
+.launch-hero .launch-copy h1 {
+  max-width:10ch;
+  font-size:clamp(3.1rem,6.4vw,6rem);
+  line-height:.98;
+  letter-spacing:-.025em;
+  text-transform:uppercase;
+}
+.launch-hero .launch-copy h1 em {
+  color:#f6f0e6;
+  font-style:normal;
+}
+.launch-hero .launch-lead { max-width:48ch; }
+.launch-hero .launch-proof {
+  border-top:1px solid rgba(226,197,141,.5);
+  border-left:3px solid #c69a54;
+  padding:14px 0 0 15px;
+}
+.launch-hero .launch-proof-mark {
+  border-color:#c69a54;
+  color:#e2c58d;
+}
+.trust-strip { background:#101a2c; }
+.trust-strip .wrap { justify-content:center; flex-wrap:wrap; column-gap:clamp(12px,2vw,28px); }
+.welcome-section { background:#f5f0e6; }
+.services-section { background:#fffdf8; }
+.journey-section { background:#eee7da; }
+.closing-cta { background:#101a2c; border-top:1px solid rgba(216,183,121,.4); }
+.footer { background:#091426; }
+@media(max-width:780px) {
+  .header-inner { min-height:82px; }
+  .brand { width:116px; min-width:116px; }
+  .brand-logo { max-height:72px; }
+  .nav {
+    background:rgba(248,245,238,.99);
+    border-top:1px solid rgba(166,126,58,.25);
+  }
+  .nav > a:not(.button) { color:#17243a; border-bottom-color:rgba(16,26,44,.12); }
+  .nav .button { color:#101a2c; }
+  .launch-hero .launch-copy h1 { font-size:clamp(2.8rem,10vw,4.5rem); }
+  .flyer-script { font-size:clamp(2.5rem,10vw,3.8rem); }
+  .trust-strip .wrap { justify-content:flex-start; }
+}
