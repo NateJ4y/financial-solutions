@@ -24,40 +24,18 @@ export const navigation = [
   ['/about/', 'About Us'],
   ['/services/', 'Finance Solutions'],
   ['/apply/', 'Apply for Finance'],
+  ['/faq/', 'Finance FAQ'],
+  ['/checklist/', 'Checklist'],
   ['/contact/', 'Contact'],
 ] as const
 
 export const vehicles = [
-  {
-    name: 'Cars',
-    enquiry: 'car finance',
-    copy: 'Explore finance for a car that suits your commute, family or next adventure.',
-  },
-  {
-    name: 'Bakkies',
-    enquiry: 'finance for a bakkie',
-    copy: 'Discuss finance for a bakkie for work, weekends or a bit of both.',
-  },
-  {
-    name: 'Bikes',
-    enquiry: 'motorcycle finance',
-    copy: 'Speak to the team about financing a motorcycle for everyday riding or weekend trips.',
-  },
-  {
-    name: 'Trailers',
-    enquiry: 'trailer finance',
-    copy: 'Ask about finance for a trailer for work, transport or leisure.',
-  },
-  {
-    name: 'Caravans',
-    enquiry: 'caravan finance',
-    copy: 'Talk through finance options for a caravan and plan your next trip.',
-  },
-  {
-    name: 'Boats',
-    enquiry: 'boat finance',
-    copy: 'Discuss boat finance before you commit to a purchase.',
-  },
+  { name: 'Cars', enquiry: 'car finance', copy: 'Explore finance for a car that suits your commute, family or next adventure.' },
+  { name: 'Bakkies', enquiry: 'finance for a bakkie', copy: 'Discuss finance for a bakkie for work, weekends or a bit of both.' },
+  { name: 'Bikes', enquiry: 'motorcycle finance', copy: 'Speak to the team about financing a motorcycle for everyday riding or weekend trips.' },
+  { name: 'Trailers', enquiry: 'trailer finance', copy: 'Ask about finance for a trailer for work, transport or leisure.' },
+  { name: 'Caravans', enquiry: 'caravan finance', copy: 'Talk through finance options for a caravan and plan your next trip.' },
+  { name: 'Boats', enquiry: 'boat finance', copy: 'Discuss boat finance before you commit to a purchase.' },
 ] as const
 
 export const services = [
