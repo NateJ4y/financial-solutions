@@ -18,16 +18,14 @@ export function SiteHeader() {
     return () => window.removeEventListener('scroll', update)
   }, [])
 
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
+  useEffect(() => { setOpen(false) }, [pathname])
 
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
       <div className="topline">
         <div className="wrap topline-inner">
-          <span>PERSONAL VEHICLE FINANCE GUIDANCE · SOUTH AFRICA</span>
+          <span>SAFE. SIMPLE. TRUSTED. · SOUTH AFRICA</span>
           <div className="topline-contacts">
             <a href={'tel:+' + primary.dial}>{primary.number}</a>
             <span className="topline-divider" aria-hidden="true">/</span>
@@ -46,8 +44,7 @@ export function SiteHeader() {
       >
         <div className="wrap header-inner">
           <a className="brand" href="/" aria-label="Call Me Finance Solutions home">
-            <span className="brand-monogram" aria-hidden="true">CM</span>
-            <span className="brand-name">Call Me<small>Finance Solutions</small></span>
+            <img className="brand-logo" src="/assets/call-me-logo.svg" alt="Call Me Finance Solutions 4 You" width="520" height="390" />
           </a>
           <button
             ref={menu}
@@ -62,12 +59,8 @@ export function SiteHeader() {
           </button>
           <nav id="site-nav" className="nav" aria-label="Main navigation" data-open={open}>
             {navigation.map(([href, label]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                aria-current={currentPath === href.replace(/\/$/, '') ? 'page' : undefined}
-              >
+              <a key={href} href={href} onClick={() => setOpen(false)}
+                aria-current={currentPath === href.replace(/\/$/, '') ? 'page' : undefined}>
                 {label}
               </a>
             ))}
