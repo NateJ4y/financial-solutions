@@ -1,6 +1,6 @@
 import { ContactBand } from '../components/sections'
 import { VehicleExplorer } from '../components/finance-controls'
-import { primary, services, whatsapp } from '../content'
+import { primary, whatsapp } from '../content'
 
 export const metadata = {
   title: 'Vehicle Finance Solutions | Call Me Finance Solutions',
